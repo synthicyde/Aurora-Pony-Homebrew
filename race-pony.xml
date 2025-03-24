@@ -5,6 +5,7 @@
 		<description></description>
 		<author>Synthicyde</author>
 		<update version="0.2.9">
+			<file name="race-pony.xml" url="https://raw.githubusercontent.com/synthicyde/Aurora-Pony-Homebrew/refs/heads/main/race-pony.xml"/>
 		</update>
 	</info>
 
@@ -46,6 +47,10 @@
 			<grant type="Size" id="ID_SIZE_MEDIUM"/>
 			<stat name="innate speed" value="40" bonus="base"/>
 			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_PONY_QUADRUPEDAL" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_PONY_POWERFUL_BUILD" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_PONY_SURE_FOOTED" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_PONY_NATURAL_KICK" />
 		</rules>
 	</element>
 
