@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Pony</name>
+		<description></description>
+		<author>Synthicyde</author>
+		<update version="0.2.9">
+		</update>
+	</info>
+
+	<element name="Pony" type="Race" source="Homebrew" id="ID_RACE_PONY">
+		<description>
+			<p class="flavor"><i>“They said I couldn't enter the tavern. I said nothing. I just stared until they moved the table outside.”</i><br />—Clovermane, pony warlock.</p>
+
+			<p>Ponies are small, hardy quadrupeds known for their strength, spirit, and surprising wit. Though often underestimated as beasts of burden or pastoral companions, ponies in some realms possess intelligence equal to that of any speaking folk. Whether gifted by magic, born under auspicious stars, or simply descended from ancient lineages, these talking ponies defy expectation—and sometimes decorum.</p>
+
+			<p>They range from shaggy mountain breeds to sleek meadow runners, and they come in many colors and personalities. While they lack hands, ponies make up for this with resilience, creativity, and sheer determination. A pony in your adventuring party might not climb a rope or scale a ladder, but they’ll haul you through a battlefield or trample a goblin without hesitation.</p>
+
+			<p>Despite their unusual form, ponies are no strangers to society. Many travel with bards, druids, or eccentric nobles, and a few forge paths of their own, driven by curiosity, destiny, or just an unspoken promise to prove their worth.</p>
+
+			<h4>PONY TRAITS</h4>
+			<p>Your pony character has the following racial traits.</p>
+			<p>
+				<span class="feature">Ability Score Increase.</span>Your Strength increases by 2.<br />
+				<span class="feature">Age.</span>Ponies mature at about 3 years of age and live up to 30 years, though some magical bloodlines live much longer.<br />
+				<span class="feature">Size.</span>Ponies stand around 4 feet at the shoulder and weigh 400 to 600 pounds. Your size is Medium.<br />
+				<span class="feature">Speed.</span>Your base walking speed is 40 feet.<br />
+				<span class="feature">Quadrupedal.</span>You cannot wield weapons, use shields, or manipulate objects requiring hands. However, you can interact with your environment using your mouth or hooves when reasonable. You may wear specially crafted barding as armor, and a willing ally can ride you if you allow it.<br />
+				<span class="feature">Powerful Build.</span>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.<br />
+				<span class="feature">Sure-Footed.</span>You have advantage on Strength (Athletics) checks made to resist being shoved or knocked prone.<br />
+				<span class="feature">Natural Kick.</span>Your hooves are natural melee weapons, which you can use to make unarmed strikes. When making an attack, you use your Strength plus your Proficiency modifier. If you hit with them, you deal bludgeoning damage equal to 2d4 + your Strength modifier.<br />
+				<span class="feature">Languages.</span>You can speak, understand, and read Common. You cannot write without magical or prosthetic assistance.<br />
+			</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="names" type="male">Harris</set>
+			<set name="names" type="female">Kamala</set>
+			<set name="names" type="surname">Brighthoof, Hefder, Hoofraven, Saddleman, Stormwind, Windrivver</set>
+			<set name="names-format">{{name}} {{surname}}</set>
+			<set name="height" modifier="2d12">4'8"</set>
+			<set name="weight" modifier="2d12">400 lb.</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="2" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_ASI" /> 
+			<grant type="Size" id="ID_SIZE_MEDIUM"/>
+			<stat name="innate speed" value="40" bonus="base"/>
+			<grant type="Language" id="ID_LANGUAGE_COMMON" requirements="!ID_WOTC_TCOE_OPTION_CUSTOMIZED_LANGUAGE" />
+		</rules>
+	</element>
+
+	<element name="Quadrupedal" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_PONY_QUADRUPEDAL">
+		<description>
+			<p>You cannot wield weapons, use shields, or manipulate objects requiring hands. However, you can interact with your environment using your mouth or hooves when reasonable. You may wear specially crafted barding as armor, and a willing ally can ride you if you allow it.</p>
+		</description>
+		<sheet>
+			<description>You cannot weild weapons, use shields, or manipulate objects requiring hands.</description>
+		</sheet>
+	</element>
+
+	<element name="Powerful Build" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_PONY_POWERFUL_BUILD">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</description>
+		</sheet>
+	</element>
+
+	<element name="Sure-Footed" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_PONY_SURE_FOOTED">
+		<description>
+			<p>You have advantage on Strength (Athletics) checks made to resist being shoved or knocked prone.</p>
+		</description>
+		<sheet>
+			<description>You have advantage on Strength (Athletics) checks made to resist being shoved or knocked prone.</description>
+		</sheet>
+	</element>
+
+	<element name="Natural Kick" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_PONY_NATURAL_KICK">
+		<description>
+			<p>Your hooves are natural melee weapons, which you can use to make unarmed strikes. When making an attack, you use your Strength plus your Proficiency modifier. If you hit with them, you deal bludgeoning damage equal to 2d4 + your Strength modifier.</p>
+		</description>
+		<sheet>
+			<description>Your hooves does 2d4 + {{strength modifier}} bludgeoning damage. Determine hit using {{strength modifier}} + {{proficiency modifier}}.</description>
+		</sheet>
+		<rules>
+			<stat name="strength modifier" value="strength:modifier" />
+			<stat name="proficiency modifier" value="proficiency" />
+		</rules>
+	</element>
+</elements>
